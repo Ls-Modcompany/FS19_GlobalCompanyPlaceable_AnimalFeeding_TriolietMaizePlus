@@ -1,0 +1,692 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<placeable>
+    <storeData>
+        <name>$l10n_GlobalCompanyPlaceable_AnimalFeeding_TriolietMaizePlus_title</name>
+        <image>store_trioliet.dds</image>
+        <price>85000</price>
+        <dailyUpkeep>10</dailyUpkeep>
+        <lifetime>1000</lifetime>
+        <rotation>0</rotation>
+        <brand>TRIO</brand>
+		<functions>
+			<function>$l10n_GlobalCompanyPlaceable_AnimalFeeding_TriolietMaizePlus_function</function>
+        </functions>
+        <species>placeable</species>
+        <category>globalCompanyPlaceable</category>
+    </storeData>
+
+    <placeableType>GC_AnimalFeederPlaceable</placeableType>
+    <filename>trioliet.i3d</filename>
+    <placement testSizeX="1" testSizeZ="1" sizeX="1" sizeZ="1" useRandomYRotation="false" useManualYRotation="true" placementRotationSnapAngle="90"/>
+	
+	<tipOcclusionUpdateArea sizeX="1" sizeZ="1" />	
+	
+    <clearAreas>
+        <clearArea startNode="0|0|0" widthNode="0|0|1" heightNode="0|0|2" />
+    </clearAreas>
+
+    <leveling requireLeveling="true" maxSmoothDistance="10" maxSlope="75" maxEdgeAngle="30">
+        <levelAreas>
+            <levelArea startNode="0|1|0" widthNode="0|1|0|0" heightNode="0|1|0|1" groundType="asphalt"/>
+        </levelAreas>
+    </leveling>
+	
+	<seasons>
+        <maskAreas>
+            <maskArea startNode="0|2|0" widthNode="0|2|1" heightNode="0|2|2" />
+        </maskAreas>
+    </seasons>
+
+	<animalFeeders>
+		<animalFeeder indexName="ANIMALFEEDER" saveId="globalCompany_animalFeeder">
+            
+            <bunkers>
+                <bunker capacity="100000" fillType="CHOPPEDMAIZE_FERMENTED GRASS_FERMENTED SILAGE" fillTypeTitle="GlobalCompanyPlaceable_AnimalFeeding_TriolietMaizePlus_bunker1_fillTypeTitle" title="GlobalCompanyPlaceable_AnimalFeeding_TriolietMaizePlus_bunker1_title">
+                    <mixingRatio min="30" max="50" />
+                    <unloadingTrigger exactFillRootNode="exactFillRootNode1" />	
+					<digitalDisplays>
+						<display displayType="LEVEL" numbers="Display1" emptyNumberColor="1 0 0 1" numberColor="1 1 0 1" fullNumberColor="0 1 0 1"/>
+					</digitalDisplays>
+                    
+					<fillVolumes>
+						<volume node="fillVolume1" />
+					</fillVolumes>
+
+                    <operation startTime="14160" endTime="19600">
+					    <roboterLoading startTime="15000" endTime="19000" />
+                        <effectTypes>
+							<particleSystems>
+								<particleEffect node="grasPs" file="particleSystem/silageEmitter.i3d" delay="1.6" />										
+							</particleSystems>
+                            <materialHolder>
+                                <effects fillType="SILAGE">
+                                    <effectNode effectClass="MorphPositionEffect" effectNode="conveyor1" materialType="belt" delay="0" fadeTime="1.5" speed="0.9" scrollLength="3.775" scrollSpeed="0.53"/>
+                                </effects>
+                            </materialHolder>
+						</effectTypes>	
+						<animationNodeGroups>
+							<animationNodes>
+								<animationNode node="FB1_Walze01_1" rotAxis="1" rotSpeed="1000" />
+								<animationNode node="FB1_Walze01_2" rotAxis="1" rotSpeed="1000" />
+                                <animationNode class="ScrollingAnimation" node="FB1_Foerderband01" scrollSpeed="0.13" scrollLength="3.84" shaderParameterName="offsetUV" shaderParameterComponent="2" turnOnFadeTime="0.3" turnOffFadeTime="2.5"/>
+							</animationNodes>
+                        </animationNodeGroups>	
+						<sounds>
+						     <sound geSoundNode="audio1" />
+							 <sound geSoundNode="audio5" />
+						</sounds>
+                    </operation>
+                </bunker>
+                <bunker capacity="100000" fillType="CLOVER_FERMENTED ALFALFA_FERMENTED" fillTypeTitle="GlobalCompanyPlaceable_AnimalFeeding_TriolietMaizePlus_bunker2_fillTypeTitle" title="GlobalCompanyPlaceable_AnimalFeeding_TriolietMaizePlus_bunker2_title">
+			        <mixingRatio min="20" max="40" />
+                    <unloadingTrigger exactFillRootNode="exactFillRootNode2" />	
+					<digitalDisplays>
+						<display displayType="LEVEL" numbers="Display2" emptyNumberColor="1 0 0 1" numberColor="1 1 0 1" fullNumberColor="0 1 0 1"/>
+					</digitalDisplays>
+                    
+					<fillVolumes>
+						<volume node="fillVolume2" />
+					</fillVolumes>
+
+                    <operation startTime="27286" endTime="33000">
+					    <roboterLoading startTime="28000" endTime="32500" />
+                        <effectTypes>
+							<particleSystems>
+								<particleEffect node="silagePs" file="particleSystem/silageEmitter.i3d" delay="1.6" />										
+							</particleSystems>
+                            <materialHolder>
+                                <effects fillType="CLOVER_FERMENTED">
+                                    <effectNode effectClass="MorphPositionEffect" effectNode="conveyor2" materialType="belt" delay="0" fadeTime="1.5" speed="0.9" scrollLength="3.775" scrollSpeed="0.53"/>
+                                </effects>
+                            </materialHolder>
+						</effectTypes>	
+						<animationNodeGroups>
+							<animationNodes>
+								<animationNode node="FB1_Walze02_1" rotAxis="1" rotSpeed="1000" />
+								<animationNode node="FB1_Walze02_2" rotAxis="1" rotSpeed="1000" />
+                                <animationNode class="ScrollingAnimation" node="FB1_Foerderband02" scrollSpeed="0.13" scrollLength="3.84" shaderParameterName="offsetUV" shaderParameterComponent="2" turnOnFadeTime="0.3" turnOffFadeTime="2.5"/>
+                            </animationNodes>
+                        </animationNodeGroups>
+						<sounds>
+						     <sound geSoundNode="audio2" />
+							 <sound geSoundNode="audio6" />
+						</sounds>
+                    </operation>
+                </bunker>
+				
+                <bunker capacity="100000" fillType="GRASS_WINDROW CLOVER_WINDROW CHOPPEDMAIZE" fillTypeTitle="GlobalCompanyPlaceable_AnimalFeeding_TriolietMaizePlus_bunker3_fillTypeTitle"  title="GlobalCompanyPlaceable_AnimalFeeding_TriolietMaizePlus_bunker3_title">
+			        <mixingRatio min="20" max="40" />
+                    <unloadingTrigger exactFillRootNode="exactFillRootNode3" />	
+					<digitalDisplays>
+						<display displayType="LEVEL" numbers="Display3" emptyNumberColor="1 0 0 1" numberColor="1 1 0 1" fullNumberColor="0 1 0 1"/>
+					</digitalDisplays>
+                    
+					<fillVolumes>
+						<volume node="fillVolume3" />
+					</fillVolumes>
+
+                    <operation startTime="40500" endTime="46000">
+					    <roboterLoading startTime="41000" endTime="45500" />
+                        <effectTypes>
+							<particleSystems>
+								<particleEffect node="strawPs" file="particleSystem/grasEmitter.i3d" delay="1.6" />										
+							</particleSystems>
+                            <materialHolder>
+                                <effects fillType="GRASS_WINDROW">
+                                    <effectNode effectClass="MorphPositionEffect" effectNode="conveyor3" materialType="belt" delay="0" fadeTime="1.5" speed="0.9" scrollLength="3.775" scrollSpeed="0.53"/>
+                                </effects>
+                            </materialHolder>
+						</effectTypes>	
+						<animationNodeGroups>
+							<animationNodes>
+								<animationNode node="FB1_Walze03_1" rotAxis="1" rotSpeed="1000" />
+								<animationNode node="FB1_Walze03_2" rotAxis="1" rotSpeed="1000" />
+                                <animationNode class="ScrollingAnimation" node="FB1_Foerderband03" scrollSpeed="0.13" scrollLength="3.84" shaderParameterName="offsetUV" shaderParameterComponent="2" turnOnFadeTime="0.3" turnOffFadeTime="2.5"/>
+                            </animationNodes>
+                        </animationNodeGroups>
+						<sounds>
+						     <sound geSoundNode="audio3" />
+							 <sound geSoundNode="audio7" />
+						</sounds>
+                    </operation>
+                </bunker>
+            </bunkers>
+
+            <roboter capacity="50000" animalModul="food" foodMixture="FORAGE">
+                <unloading startTime="104126" endTime="190724">
+                    <effectTypes>
+                        <particleSystems>
+                            <particleEffect node="forageEmitter" file="particleSystem/forageEmitter.i3d" delay="1.6" />										
+                        </particleSystems>
+                    </effectTypes>
+					<sounds>
+						<sound geSoundNode="audio8" />
+					</sounds>
+                </unloading>
+                <fillTypeSwitch time="55000" />
+                <digitalDisplays>
+                    <display displayType="LEVEL" numbers="DisplayRobi" emptyNumberColor="0 0 0 1" numberColor="0 0 0 1" fullNumberColor="0 0 0 1"/>
+                </digitalDisplays>
+                <fillVolumes>
+                    <volume node="fillVolumeRobi" />
+                </fillVolumes>
+                <operation startTime="850" endTime="201793">
+                    <animationNodeGroups>
+                        <animationNodes>
+                            <animationNode node="Schnecke1" rotAxis="2" rotSpeed="350" />
+                            <animationNode node="Schnecke2" rotAxis="2" rotSpeed="350" />
+                        </animationNodes>
+                    </animationNodeGroups>
+					<sounds>
+						     <sound geSoundNode="audio4" />
+					</sounds>
+                </operation>
+            </roboter>
+
+            <playerTrigger playerTriggerNode="Playertrigger" />
+			
+            <animationClips>
+                <animationClip node="Roboter" name="PalettAniSource" animSpeedScale="2"/>		
+            </animationClips>
+				
+			<i3dMappings>  
+				<i3dMapping id="exactFillRootNode1" node="1|0"/>
+                <i3dMapping id="exactFillRootNode2" node="1|1"/>
+                <i3dMapping id="exactFillRootNode3" node="1|2"/>
+                <i3dMapping id="Display1" node="1|3"/>
+                <i3dMapping id="Display2" node="1|4"/>
+                <i3dMapping id="Display3" node="1|5"/>
+                <i3dMapping id="Playertrigger" node="4"/>
+                <i3dMapping id="Roboter" node="3|0|1|0|0"/>
+                <i3dMapping id="grasPs" node="1|6"/>
+                <i3dMapping id="silagePs" node="1|7"/>
+                <i3dMapping id="strawPs" node="1|8"/>
+                <i3dMapping id="fillVolume1" node="1|9"/>
+                <i3dMapping id="fillVolume2" node="1|10"/>
+                <i3dMapping id="fillVolume3" node="1|11"/>
+                <i3dMapping id="fillVolumeRobi" node="3|0|1|0|0|4"/>
+                <i3dMapping id="DisplayRobi" node="3|0|1|0|0|5"/>
+                <i3dMapping id="FB1_Walze01_1" node="3|0|0|0|0|1"/>
+                <i3dMapping id="FB1_Walze01_2" node="3|0|0|0|0|2"/>
+                <i3dMapping id="FB1_Walze02_1" node="3|0|0|0|1|1"/>
+                <i3dMapping id="FB1_Walze02_2" node="3|0|0|0|1|2"/>
+                <i3dMapping id="FB1_Walze03_1" node="3|0|0|0|2|1"/>
+                <i3dMapping id="FB1_Walze03_2" node="3|0|0|0|2|2"/>
+                <i3dMapping id="FB1_Foerderband01" node="3|0|0|0|0|0"/>
+                <i3dMapping id="FB1_Foerderband02" node="3|0|0|0|1|0"/>
+                <i3dMapping id="FB1_Foerderband03" node="3|0|0|0|2|0"/>
+                <i3dMapping id="conveyor1" node="1|12"/>
+                <i3dMapping id="conveyor2" node="1|13"/>
+                <i3dMapping id="conveyor3" node="1|14"/>
+                <i3dMapping id="Schnecke1" node="3|0|1|0|0|0"/>
+                <i3dMapping id="Schnecke2" node="3|0|1|0|0|1"/>
+                <i3dMapping id="forageEmitter" node="3|0|1|0|0|6"/>
+				<i3dMapping id="audio1" node="1|15" />
+    			<i3dMapping id="audio2" node="1|16" />
+				<i3dMapping id="audio3" node="1|17" />
+				<i3dMapping id="audio4" node="3|0|1|0|0|7" />
+				<i3dMapping id="audio5" node="1|18" />
+    			<i3dMapping id="audio6" node="1|19" />
+				<i3dMapping id="audio7" node="1|20" />
+				<i3dMapping id="audio8" node="3|0|1|0|0|8" />
+			</i3dMappings>				
+		</animalFeeder>
+	</animalFeeders>
+
+
+
+    <seasons>
+        <maskAreas>
+            <maskArea startNode="0|2|0" widthNode="0|2|1" heightNode="0|2|2" />
+        </maskAreas>
+    </seasons>	
+	<animatedObjects>
+        <animatedObject saveId="door1_TRIO" >
+            <animation duration="7">
+			<part node="3|2|0"> <!--index of segment 1-->
+				<Keyframe time="0" translation="0 0 0" rotation="0 0 0"/>
+				<Keyframe time="0.1" translation="0 0.38 0" rotation="0 0 0"/>
+				<Keyframe time="0.2" translation="0 0.38 0" rotation="0 0 0"/>
+				<Keyframe time="0.3" translation="0 0.38 0" rotation="0 0 0"/>
+				<Keyframe time="0.4" translation="0 0.38 0" rotation="0 0 0"/>
+				<Keyframe time="0.5" translation="0 0.38 0" rotation="0 0 0"/>
+				<Keyframe time="0.6" translation="0 0.38 0" rotation="0 0 0"/>
+				<Keyframe time="0.7" translation="0 0.38 0" rotation="0 0 0"/>
+				<Keyframe time="0.8" translation="0 0.38 0" rotation="0 0 0"/>
+				<Keyframe time="0.9" translation="0 0.38 0" rotation="0 0 0"/>
+				<Keyframe time="1" translation="0 0.38 0" rotation="0 0 0"/>
+			</part>
+			<part node="3|2|1"> <!--index of segment 2-->
+				<Keyframe time="0" translation="0 0 0" rotation="0 0 0"/>
+				<Keyframe time="0.1" translation="0 0.38 0" rotation="0 0 0"/>
+				<Keyframe time="0.2" translation="0 0.76 0" rotation="0 0 0"/>
+				<Keyframe time="0.3" translation="0 0.76 0" rotation="0 0 0"/>
+				<Keyframe time="0.4" translation="0 0.76 0" rotation="0 0 0"/>
+				<Keyframe time="0.5" translation="0 0.76 0" rotation="0 0 0"/>
+				<Keyframe time="0.6" translation="0 0.76 0" rotation="0 0 0"/>
+				<Keyframe time="0.7" translation="0 0.76 0" rotation="0 0 0"/>
+				<Keyframe time="0.8" translation="0 0.76 0" rotation="0 0 0"/>
+				<Keyframe time="0.9" translation="0 0.76 0" rotation="0 0 0"/>
+				<Keyframe time="1" translation="0 0.76 0" rotation="0 0 0"/>
+			</part>
+			<part node="3|2|2"> <!--index of segment 3-->
+				<Keyframe time="0" translation="0 0 0" rotation="0 0 0"/>
+				<Keyframe time="0.1" translation="0 0.38 0" rotation="0 0 0"/>
+				<Keyframe time="0.2" translation="0 0.76 0" rotation="0 0 0"/>
+				<Keyframe time="0.3" translation="0 1.14 0" rotation="0 0 0"/>
+				<Keyframe time="0.4" translation="0 1.14 0" rotation="0 0 0"/>
+				<Keyframe time="0.5" translation="0 1.14 0" rotation="0 0 0"/>
+				<Keyframe time="0.6" translation="0 1.14 0" rotation="0 0 0"/>
+				<Keyframe time="0.7" translation="0 1.14 0" rotation="0 0 0"/>
+				<Keyframe time="0.8" translation="0 1.14 0" rotation="0 0 0"/>
+				<Keyframe time="0.9" translation="0 1.14 0" rotation="0 0 0"/>
+				<Keyframe time="1" translation="0 1.14 0" rotation="0 0 0"/>
+			</part>
+			<part node="3|2|3"> <!--index of segment 4-->
+				<Keyframe time="0" translation="0 0 0" rotation="0 0 0"/>
+				<Keyframe time="0.1" translation="0 0.38 0" rotation="0 0 0"/>
+				<Keyframe time="0.2" translation="0 0.76 0" rotation="0 0 0"/>
+				<Keyframe time="0.3" translation="0 1.14 0" rotation="0 0 0"/>
+				<Keyframe time="0.4" translation="0 1.52 0" rotation="0 0 0"/>
+				<Keyframe time="0.5" translation="0 1.52 0" rotation="0 0 0"/>
+				<Keyframe time="0.6" translation="0 1.52 0" rotation="0 0 0"/>
+				<Keyframe time="0.7" translation="0 1.52 0" rotation="0 0 0"/>
+				<Keyframe time="0.8" translation="0 1.52 0" rotation="0 0 0"/>
+				<Keyframe time="0.9" translation="0 1.52 0" rotation="0 0 0"/>
+				<Keyframe time="1" translation="0 1.52 0" rotation="0 0 0"/>
+			</part>
+			<part node="3|2|4"> <!--index of segment 5-->
+				<Keyframe time="0" translation="0 0 0" rotation="0 0 0"/>
+				<Keyframe time="0.1" translation="0 0.38 0" rotation="0 0 0"/>
+				<Keyframe time="0.2" translation="0 0.76 0" rotation="0 0 0"/>
+				<Keyframe time="0.3" translation="0 1.14 0" rotation="0 0 0"/>
+				<Keyframe time="0.4" translation="0 1.52 0" rotation="0 0 0"/>
+				<Keyframe time="0.5" translation="0 1.9 0" rotation="0 0 0"/>
+				<Keyframe time="0.6" translation="0 1.9 0" rotation="0 0 0"/>
+				<Keyframe time="0.7" translation="0 1.9 0" rotation="0 0 0"/>
+				<Keyframe time="0.8" translation="0 1.9 0" rotation="0 0 0"/>
+				<Keyframe time="0.9" translation="0 1.9 0" rotation="0 0 0"/>
+				<Keyframe time="1" translation="0 1.9 0" rotation="0 0 0"/>
+			</part>
+			<part node="3|2|5"> <!--index of segment 6-->
+				<Keyframe time="0" translation="0 0 0" rotation="0 0 0"/>
+				<Keyframe time="0.1" translation="0 0.38 0" rotation="0 0 0"/>
+				<Keyframe time="0.2" translation="0 0.76 0" rotation="0 0 0"/>
+				<Keyframe time="0.3" translation="0 1.14 0" rotation="0 0 0"/>
+				<Keyframe time="0.4" translation="0 1.52 0" rotation="0 0 0"/>
+				<Keyframe time="0.5" translation="0 1.9 0" rotation="0 0 0"/>
+				<Keyframe time="0.6" translation="0 2.28 0" rotation="0 0 0"/>
+				<Keyframe time="0.7" translation="0 2.28 0" rotation="0 0 0"/>
+				<Keyframe time="0.8" translation="0 2.28 0" rotation="0 0 0"/>
+				<Keyframe time="0.9" translation="0 2.28 0" rotation="0 0 0"/>
+				<Keyframe time="1" translation="0 2.28 0" rotation="0 0 0"/>
+			</part>
+			<part node="3|2|6"> <!--index of segment 7-->
+				<Keyframe time="0" translation="0 0 0" rotation="0 0 0"/>
+				<Keyframe time="0.1" translation="0 0.38 0" rotation="0 0 0"/>
+				<Keyframe time="0.2" translation="0 0.76 0" rotation="0 0 0"/>
+				<Keyframe time="0.3" translation="0 1.14 0" rotation="0 0 0"/>
+				<Keyframe time="0.4" translation="0 1.52 0" rotation="0 0 0"/>
+				<Keyframe time="0.5" translation="0 1.9 0" rotation="0 0 0"/>
+				<Keyframe time="0.6" translation="0 2.28 0" rotation="0 0 0"/>
+				<Keyframe time="0.7" translation="0 2.66 0" rotation="0 0 0"/>
+				<Keyframe time="0.8" translation="0 2.66 0" rotation="0 0 0"/>
+				<Keyframe time="0.9" translation="0 2.66 0" rotation="0 0 0"/>
+				<Keyframe time="1" translation="0 2.66 0" rotation="0 0 0"/>
+			</part>
+			<part node="3|2|7"> <!--index of segment 8-->
+				<Keyframe time="0" translation="0 0 0" rotation="0 0 0"/>
+				<Keyframe time="0.1" translation="0 0.38 0" rotation="0 0 0"/>
+				<Keyframe time="0.2" translation="0 0.76 0" rotation="0 0 0"/>
+				<Keyframe time="0.3" translation="0 1.14 0" rotation="0 0 0"/>
+				<Keyframe time="0.4" translation="0 1.52 0" rotation="0 0 0"/>
+				<Keyframe time="0.5" translation="0 1.9 0" rotation="0 0 0"/>
+				<Keyframe time="0.6" translation="0 2.28 0" rotation="0 0 0"/>
+				<Keyframe time="0.7" translation="0 2.66 0" rotation="0 0 0"/>
+				<Keyframe time="0.8" translation="0 3.04 0" rotation="0 0 0"/>
+				<Keyframe time="0.9" translation="0 3.04 0" rotation="0 0 0"/>
+				<Keyframe time="1" translation="0 3.04 0" rotation="0 0 0"/>
+			</part>
+			<part node="3|2|8"> <!--index of segment 9-->
+				<Keyframe time="0" translation="0 0 0" rotation="0 0 0"/>
+				<Keyframe time="0.1" translation="0 0.38 0" rotation="0 0 0"/>
+				<Keyframe time="0.2" translation="0 0.76 0" rotation="0 0 0"/>
+				<Keyframe time="0.3" translation="0 1.14 0" rotation="0 0 0"/>
+				<Keyframe time="0.4" translation="0 1.52 0" rotation="0 0 0"/>
+				<Keyframe time="0.5" translation="0 1.9 0" rotation="0 0 0"/>
+				<Keyframe time="0.6" translation="0 2.28 0" rotation="0 0 0"/>
+				<Keyframe time="0.7" translation="0 2.66 0" rotation="0 0 0"/>
+				<Keyframe time="0.8" translation="0 3.04 0" rotation="0 0 0"/>
+				<Keyframe time="0.9" translation="0 3.42 0" rotation="0 0 0"/>
+				<Keyframe time="1" translation="0 3.42 0" rotation="0 0 0"/>
+			</part>
+			<part node="3|2|9"> <!--index of segment 10-->
+				<Keyframe time="0" translation="0 0 0" rotation="0 0 0"/>
+				<Keyframe time="0.1" translation="0 0.38 0" rotation="0 0 0"/>
+				<Keyframe time="0.2" translation="0 0.76 0" rotation="0 0 0"/>
+				<Keyframe time="0.3" translation="0 1.14 0" rotation="0 0 0"/>
+				<Keyframe time="0.4" translation="0 1.52 0" rotation="0 0 0"/>
+				<Keyframe time="0.5" translation="0 1.9 0" rotation="0 0 0"/>
+				<Keyframe time="0.6" translation="0 2.28 0" rotation="0 0 0"/>
+				<Keyframe time="0.7" translation="0 2.66 0" rotation="0 0 0"/>
+				<Keyframe time="0.8" translation="0 3.04 0" rotation="0 0 0"/>
+				<Keyframe time="0.9" translation="0 3.42 0" rotation="0 0 0"/>
+				<Keyframe time="1" translation="0 3.8 0" rotation="0 0 0"/>
+			</part>
+            </animation>
+            <controls triggerNode="3|2|10" posAction="ACTIVATE_HANDTOOL" posText="action_openRolldoor" negText="action_closeRolldoor" />
+            <sounds>
+                <moving file="$data/sounds/tools/cotton_transporter/cotton_load_loop.ogg" loops="0" linkNode="3|2" volume="0.8" radius="25" innerRadius="3" fadeOut="0.25"/>
+                
+            </sounds>
+        </animatedObject>
+		<animatedObject saveId="door2_TRIO" >
+            <animation duration="7">
+			<part node="3|3|0"> <!--index of segment 1-->
+				<Keyframe time="0" translation="0 0 0" rotation="0 0 0"/>
+				<Keyframe time="0.1" translation="0 0.38 0" rotation="0 0 0"/>
+				<Keyframe time="0.2" translation="0 0.38 0" rotation="0 0 0"/>
+				<Keyframe time="0.3" translation="0 0.38 0" rotation="0 0 0"/>
+				<Keyframe time="0.4" translation="0 0.38 0" rotation="0 0 0"/>
+				<Keyframe time="0.5" translation="0 0.38 0" rotation="0 0 0"/>
+				<Keyframe time="0.6" translation="0 0.38 0" rotation="0 0 0"/>
+				<Keyframe time="0.7" translation="0 0.38 0" rotation="0 0 0"/>
+				<Keyframe time="0.8" translation="0 0.38 0" rotation="0 0 0"/>
+				<Keyframe time="0.9" translation="0 0.38 0" rotation="0 0 0"/>
+				<Keyframe time="1" translation="0 0.38 0" rotation="0 0 0"/>
+			</part>
+			<part node="3|3|1"> <!--index of segment 2-->
+				<Keyframe time="0" translation="0 0 0" rotation="0 0 0"/>
+				<Keyframe time="0.1" translation="0 0.38 0" rotation="0 0 0"/>
+				<Keyframe time="0.2" translation="0 0.76 0" rotation="0 0 0"/>
+				<Keyframe time="0.3" translation="0 0.76 0" rotation="0 0 0"/>
+				<Keyframe time="0.4" translation="0 0.76 0" rotation="0 0 0"/>
+				<Keyframe time="0.5" translation="0 0.76 0" rotation="0 0 0"/>
+				<Keyframe time="0.6" translation="0 0.76 0" rotation="0 0 0"/>
+				<Keyframe time="0.7" translation="0 0.76 0" rotation="0 0 0"/>
+				<Keyframe time="0.8" translation="0 0.76 0" rotation="0 0 0"/>
+				<Keyframe time="0.9" translation="0 0.76 0" rotation="0 0 0"/>
+				<Keyframe time="1" translation="0 0.76 0" rotation="0 0 0"/>
+			</part>
+			<part node="3|3|2"> <!--index of segment 3-->
+				<Keyframe time="0" translation="0 0 0" rotation="0 0 0"/>
+				<Keyframe time="0.1" translation="0 0.38 0" rotation="0 0 0"/>
+				<Keyframe time="0.2" translation="0 0.76 0" rotation="0 0 0"/>
+				<Keyframe time="0.3" translation="0 1.14 0" rotation="0 0 0"/>
+				<Keyframe time="0.4" translation="0 1.14 0" rotation="0 0 0"/>
+				<Keyframe time="0.5" translation="0 1.14 0" rotation="0 0 0"/>
+				<Keyframe time="0.6" translation="0 1.14 0" rotation="0 0 0"/>
+				<Keyframe time="0.7" translation="0 1.14 0" rotation="0 0 0"/>
+				<Keyframe time="0.8" translation="0 1.14 0" rotation="0 0 0"/>
+				<Keyframe time="0.9" translation="0 1.14 0" rotation="0 0 0"/>
+				<Keyframe time="1" translation="0 1.14 0" rotation="0 0 0"/>
+			</part>
+			<part node="3|3|3"> <!--index of segment 4-->
+				<Keyframe time="0" translation="0 0 0" rotation="0 0 0"/>
+				<Keyframe time="0.1" translation="0 0.38 0" rotation="0 0 0"/>
+				<Keyframe time="0.2" translation="0 0.76 0" rotation="0 0 0"/>
+				<Keyframe time="0.3" translation="0 1.14 0" rotation="0 0 0"/>
+				<Keyframe time="0.4" translation="0 1.52 0" rotation="0 0 0"/>
+				<Keyframe time="0.5" translation="0 1.52 0" rotation="0 0 0"/>
+				<Keyframe time="0.6" translation="0 1.52 0" rotation="0 0 0"/>
+				<Keyframe time="0.7" translation="0 1.52 0" rotation="0 0 0"/>
+				<Keyframe time="0.8" translation="0 1.52 0" rotation="0 0 0"/>
+				<Keyframe time="0.9" translation="0 1.52 0" rotation="0 0 0"/>
+				<Keyframe time="1" translation="0 1.52 0" rotation="0 0 0"/>
+			</part>
+			<part node="3|3|4"> <!--index of segment 5-->
+				<Keyframe time="0" translation="0 0 0" rotation="0 0 0"/>
+				<Keyframe time="0.1" translation="0 0.38 0" rotation="0 0 0"/>
+				<Keyframe time="0.2" translation="0 0.76 0" rotation="0 0 0"/>
+				<Keyframe time="0.3" translation="0 1.14 0" rotation="0 0 0"/>
+				<Keyframe time="0.4" translation="0 1.52 0" rotation="0 0 0"/>
+				<Keyframe time="0.5" translation="0 1.9 0" rotation="0 0 0"/>
+				<Keyframe time="0.6" translation="0 1.9 0" rotation="0 0 0"/>
+				<Keyframe time="0.7" translation="0 1.9 0" rotation="0 0 0"/>
+				<Keyframe time="0.8" translation="0 1.9 0" rotation="0 0 0"/>
+				<Keyframe time="0.9" translation="0 1.9 0" rotation="0 0 0"/>
+				<Keyframe time="1" translation="0 1.9 0" rotation="0 0 0"/>
+			</part>
+			<part node="3|3|5"> <!--index of segment 6-->
+				<Keyframe time="0" translation="0 0 0" rotation="0 0 0"/>
+				<Keyframe time="0.1" translation="0 0.38 0" rotation="0 0 0"/>
+				<Keyframe time="0.2" translation="0 0.76 0" rotation="0 0 0"/>
+				<Keyframe time="0.3" translation="0 1.14 0" rotation="0 0 0"/>
+				<Keyframe time="0.4" translation="0 1.52 0" rotation="0 0 0"/>
+				<Keyframe time="0.5" translation="0 1.9 0" rotation="0 0 0"/>
+				<Keyframe time="0.6" translation="0 2.28 0" rotation="0 0 0"/>
+				<Keyframe time="0.7" translation="0 2.28 0" rotation="0 0 0"/>
+				<Keyframe time="0.8" translation="0 2.28 0" rotation="0 0 0"/>
+				<Keyframe time="0.9" translation="0 2.28 0" rotation="0 0 0"/>
+				<Keyframe time="1" translation="0 2.28 0" rotation="0 0 0"/>
+			</part>
+			<part node="3|3|6"> <!--index of segment 7-->
+				<Keyframe time="0" translation="0 0 0" rotation="0 0 0"/>
+				<Keyframe time="0.1" translation="0 0.38 0" rotation="0 0 0"/>
+				<Keyframe time="0.2" translation="0 0.76 0" rotation="0 0 0"/>
+				<Keyframe time="0.3" translation="0 1.14 0" rotation="0 0 0"/>
+				<Keyframe time="0.4" translation="0 1.52 0" rotation="0 0 0"/>
+				<Keyframe time="0.5" translation="0 1.9 0" rotation="0 0 0"/>
+				<Keyframe time="0.6" translation="0 2.28 0" rotation="0 0 0"/>
+				<Keyframe time="0.7" translation="0 2.66 0" rotation="0 0 0"/>
+				<Keyframe time="0.8" translation="0 2.66 0" rotation="0 0 0"/>
+				<Keyframe time="0.9" translation="0 2.66 0" rotation="0 0 0"/>
+				<Keyframe time="1" translation="0 2.66 0" rotation="0 0 0"/>
+			</part>
+			<part node="3|3|7"> <!--index of segment 8-->
+				<Keyframe time="0" translation="0 0 0" rotation="0 0 0"/>
+				<Keyframe time="0.1" translation="0 0.38 0" rotation="0 0 0"/>
+				<Keyframe time="0.2" translation="0 0.76 0" rotation="0 0 0"/>
+				<Keyframe time="0.3" translation="0 1.14 0" rotation="0 0 0"/>
+				<Keyframe time="0.4" translation="0 1.52 0" rotation="0 0 0"/>
+				<Keyframe time="0.5" translation="0 1.9 0" rotation="0 0 0"/>
+				<Keyframe time="0.6" translation="0 2.28 0" rotation="0 0 0"/>
+				<Keyframe time="0.7" translation="0 2.66 0" rotation="0 0 0"/>
+				<Keyframe time="0.8" translation="0 3.04 0" rotation="0 0 0"/>
+				<Keyframe time="0.9" translation="0 3.04 0" rotation="0 0 0"/>
+				<Keyframe time="1" translation="0 3.04 0" rotation="0 0 0"/>
+			</part>
+			<part node="3|3|8"> <!--index of segment 9-->
+				<Keyframe time="0" translation="0 0 0" rotation="0 0 0"/>
+				<Keyframe time="0.1" translation="0 0.38 0" rotation="0 0 0"/>
+				<Keyframe time="0.2" translation="0 0.76 0" rotation="0 0 0"/>
+				<Keyframe time="0.3" translation="0 1.14 0" rotation="0 0 0"/>
+				<Keyframe time="0.4" translation="0 1.52 0" rotation="0 0 0"/>
+				<Keyframe time="0.5" translation="0 1.9 0" rotation="0 0 0"/>
+				<Keyframe time="0.6" translation="0 2.28 0" rotation="0 0 0"/>
+				<Keyframe time="0.7" translation="0 2.66 0" rotation="0 0 0"/>
+				<Keyframe time="0.8" translation="0 3.04 0" rotation="0 0 0"/>
+				<Keyframe time="0.9" translation="0 3.42 0" rotation="0 0 0"/>
+				<Keyframe time="1" translation="0 3.42 0" rotation="0 0 0"/>
+			</part>
+			<part node="3|3|9"> <!--index of segment 10-->
+				<Keyframe time="0" translation="0 0 0" rotation="0 0 0"/>
+				<Keyframe time="0.1" translation="0 0.38 0" rotation="0 0 0"/>
+				<Keyframe time="0.2" translation="0 0.76 0" rotation="0 0 0"/>
+				<Keyframe time="0.3" translation="0 1.14 0" rotation="0 0 0"/>
+				<Keyframe time="0.4" translation="0 1.52 0" rotation="0 0 0"/>
+				<Keyframe time="0.5" translation="0 1.9 0" rotation="0 0 0"/>
+				<Keyframe time="0.6" translation="0 2.28 0" rotation="0 0 0"/>
+				<Keyframe time="0.7" translation="0 2.66 0" rotation="0 0 0"/>
+				<Keyframe time="0.8" translation="0 3.04 0" rotation="0 0 0"/>
+				<Keyframe time="0.9" translation="0 3.42 0" rotation="0 0 0"/>
+				<Keyframe time="1" translation="0 3.8 0" rotation="0 0 0"/>
+			</part>
+            </animation>
+            <controls triggerNode="3|3|10" posAction="ACTIVATE_HANDTOOL" posText="action_openRolldoor" negText="action_closeRolldoor" />
+            <sounds>
+                <moving file="$data/sounds/tools/cotton_transporter/cotton_load_loop.ogg" loops="0" linkNode="3|3" volume="0.8" radius="25" innerRadius="3" fadeOut="0.25"/>
+                
+            </sounds>
+        </animatedObject>
+		<animatedObject saveId="door3_TRIO" >
+            <animation duration="7">
+			<part node="3|4|0"> <!--index of segment 1-->
+				<Keyframe time="0" translation="0 0 0" rotation="0 0 0"/>
+				<Keyframe time="0.1" translation="0 0.38 0" rotation="0 0 0"/>
+				<Keyframe time="0.2" translation="0 0.38 0" rotation="0 0 0"/>
+				<Keyframe time="0.3" translation="0 0.38 0" rotation="0 0 0"/>
+				<Keyframe time="0.4" translation="0 0.38 0" rotation="0 0 0"/>
+				<Keyframe time="0.5" translation="0 0.38 0" rotation="0 0 0"/>
+				<Keyframe time="0.6" translation="0 0.38 0" rotation="0 0 0"/>
+				<Keyframe time="0.7" translation="0 0.38 0" rotation="0 0 0"/>
+				<Keyframe time="0.8" translation="0 0.38 0" rotation="0 0 0"/>
+				<Keyframe time="0.9" translation="0 0.38 0" rotation="0 0 0"/>
+				<Keyframe time="1" translation="0 0.38 0" rotation="0 0 0"/>
+			</part>
+			<part node="3|4|1"> <!--index of segment 2-->
+				<Keyframe time="0" translation="0 0 0" rotation="0 0 0"/>
+				<Keyframe time="0.1" translation="0 0.38 0" rotation="0 0 0"/>
+				<Keyframe time="0.2" translation="0 0.76 0" rotation="0 0 0"/>
+				<Keyframe time="0.3" translation="0 0.76 0" rotation="0 0 0"/>
+				<Keyframe time="0.4" translation="0 0.76 0" rotation="0 0 0"/>
+				<Keyframe time="0.5" translation="0 0.76 0" rotation="0 0 0"/>
+				<Keyframe time="0.6" translation="0 0.76 0" rotation="0 0 0"/>
+				<Keyframe time="0.7" translation="0 0.76 0" rotation="0 0 0"/>
+				<Keyframe time="0.8" translation="0 0.76 0" rotation="0 0 0"/>
+				<Keyframe time="0.9" translation="0 0.76 0" rotation="0 0 0"/>
+				<Keyframe time="1" translation="0 0.76 0" rotation="0 0 0"/>
+			</part>
+			<part node="3|4|2"> <!--index of segment 3-->
+				<Keyframe time="0" translation="0 0 0" rotation="0 0 0"/>
+				<Keyframe time="0.1" translation="0 0.38 0" rotation="0 0 0"/>
+				<Keyframe time="0.2" translation="0 0.76 0" rotation="0 0 0"/>
+				<Keyframe time="0.3" translation="0 1.14 0" rotation="0 0 0"/>
+				<Keyframe time="0.4" translation="0 1.14 0" rotation="0 0 0"/>
+				<Keyframe time="0.5" translation="0 1.14 0" rotation="0 0 0"/>
+				<Keyframe time="0.6" translation="0 1.14 0" rotation="0 0 0"/>
+				<Keyframe time="0.7" translation="0 1.14 0" rotation="0 0 0"/>
+				<Keyframe time="0.8" translation="0 1.14 0" rotation="0 0 0"/>
+				<Keyframe time="0.9" translation="0 1.14 0" rotation="0 0 0"/>
+				<Keyframe time="1" translation="0 1.14 0" rotation="0 0 0"/>
+			</part>
+			<part node="3|4|3"> <!--index of segment 4-->
+				<Keyframe time="0" translation="0 0 0" rotation="0 0 0"/>
+				<Keyframe time="0.1" translation="0 0.38 0" rotation="0 0 0"/>
+				<Keyframe time="0.2" translation="0 0.76 0" rotation="0 0 0"/>
+				<Keyframe time="0.3" translation="0 1.14 0" rotation="0 0 0"/>
+				<Keyframe time="0.4" translation="0 1.52 0" rotation="0 0 0"/>
+				<Keyframe time="0.5" translation="0 1.52 0" rotation="0 0 0"/>
+				<Keyframe time="0.6" translation="0 1.52 0" rotation="0 0 0"/>
+				<Keyframe time="0.7" translation="0 1.52 0" rotation="0 0 0"/>
+				<Keyframe time="0.8" translation="0 1.52 0" rotation="0 0 0"/>
+				<Keyframe time="0.9" translation="0 1.52 0" rotation="0 0 0"/>
+				<Keyframe time="1" translation="0 1.52 0" rotation="0 0 0"/>
+			</part>
+			<part node="3|4|4"> <!--index of segment 5-->
+				<Keyframe time="0" translation="0 0 0" rotation="0 0 0"/>
+				<Keyframe time="0.1" translation="0 0.38 0" rotation="0 0 0"/>
+				<Keyframe time="0.2" translation="0 0.76 0" rotation="0 0 0"/>
+				<Keyframe time="0.3" translation="0 1.14 0" rotation="0 0 0"/>
+				<Keyframe time="0.4" translation="0 1.52 0" rotation="0 0 0"/>
+				<Keyframe time="0.5" translation="0 1.9 0" rotation="0 0 0"/>
+				<Keyframe time="0.6" translation="0 1.9 0" rotation="0 0 0"/>
+				<Keyframe time="0.7" translation="0 1.9 0" rotation="0 0 0"/>
+				<Keyframe time="0.8" translation="0 1.9 0" rotation="0 0 0"/>
+				<Keyframe time="0.9" translation="0 1.9 0" rotation="0 0 0"/>
+				<Keyframe time="1" translation="0 1.9 0" rotation="0 0 0"/>
+			</part>
+			<part node="3|4|5"> <!--index of segment 6-->
+				<Keyframe time="0" translation="0 0 0" rotation="0 0 0"/>
+				<Keyframe time="0.1" translation="0 0.38 0" rotation="0 0 0"/>
+				<Keyframe time="0.2" translation="0 0.76 0" rotation="0 0 0"/>
+				<Keyframe time="0.3" translation="0 1.14 0" rotation="0 0 0"/>
+				<Keyframe time="0.4" translation="0 1.52 0" rotation="0 0 0"/>
+				<Keyframe time="0.5" translation="0 1.9 0" rotation="0 0 0"/>
+				<Keyframe time="0.6" translation="0 2.28 0" rotation="0 0 0"/>
+				<Keyframe time="0.7" translation="0 2.28 0" rotation="0 0 0"/>
+				<Keyframe time="0.8" translation="0 2.28 0" rotation="0 0 0"/>
+				<Keyframe time="0.9" translation="0 2.28 0" rotation="0 0 0"/>
+				<Keyframe time="1" translation="0 2.28 0" rotation="0 0 0"/>
+			</part>
+			<part node="3|4|6"> <!--index of segment 7-->
+				<Keyframe time="0" translation="0 0 0" rotation="0 0 0"/>
+				<Keyframe time="0.1" translation="0 0.38 0" rotation="0 0 0"/>
+				<Keyframe time="0.2" translation="0 0.76 0" rotation="0 0 0"/>
+				<Keyframe time="0.3" translation="0 1.14 0" rotation="0 0 0"/>
+				<Keyframe time="0.4" translation="0 1.52 0" rotation="0 0 0"/>
+				<Keyframe time="0.5" translation="0 1.9 0" rotation="0 0 0"/>
+				<Keyframe time="0.6" translation="0 2.28 0" rotation="0 0 0"/>
+				<Keyframe time="0.7" translation="0 2.66 0" rotation="0 0 0"/>
+				<Keyframe time="0.8" translation="0 2.66 0" rotation="0 0 0"/>
+				<Keyframe time="0.9" translation="0 2.66 0" rotation="0 0 0"/>
+				<Keyframe time="1" translation="0 2.66 0" rotation="0 0 0"/>
+			</part>
+			<part node="3|4|7"> <!--index of segment 8-->
+				<Keyframe time="0" translation="0 0 0" rotation="0 0 0"/>
+				<Keyframe time="0.1" translation="0 0.38 0" rotation="0 0 0"/>
+				<Keyframe time="0.2" translation="0 0.76 0" rotation="0 0 0"/>
+				<Keyframe time="0.3" translation="0 1.14 0" rotation="0 0 0"/>
+				<Keyframe time="0.4" translation="0 1.52 0" rotation="0 0 0"/>
+				<Keyframe time="0.5" translation="0 1.9 0" rotation="0 0 0"/>
+				<Keyframe time="0.6" translation="0 2.28 0" rotation="0 0 0"/>
+				<Keyframe time="0.7" translation="0 2.66 0" rotation="0 0 0"/>
+				<Keyframe time="0.8" translation="0 3.04 0" rotation="0 0 0"/>
+				<Keyframe time="0.9" translation="0 3.04 0" rotation="0 0 0"/>
+				<Keyframe time="1" translation="0 3.04 0" rotation="0 0 0"/>
+			</part>
+			<part node="3|4|8"> <!--index of segment 9-->
+				<Keyframe time="0" translation="0 0 0" rotation="0 0 0"/>
+				<Keyframe time="0.1" translation="0 0.38 0" rotation="0 0 0"/>
+				<Keyframe time="0.2" translation="0 0.76 0" rotation="0 0 0"/>
+				<Keyframe time="0.3" translation="0 1.14 0" rotation="0 0 0"/>
+				<Keyframe time="0.4" translation="0 1.52 0" rotation="0 0 0"/>
+				<Keyframe time="0.5" translation="0 1.9 0" rotation="0 0 0"/>
+				<Keyframe time="0.6" translation="0 2.28 0" rotation="0 0 0"/>
+				<Keyframe time="0.7" translation="0 2.66 0" rotation="0 0 0"/>
+				<Keyframe time="0.8" translation="0 3.04 0" rotation="0 0 0"/>
+				<Keyframe time="0.9" translation="0 3.42 0" rotation="0 0 0"/>
+				<Keyframe time="1" translation="0 3.42 0" rotation="0 0 0"/>
+			</part>
+			<part node="3|4|9"> <!--index of segment 10-->
+				<Keyframe time="0" translation="0 0 0" rotation="0 0 0"/>
+				<Keyframe time="0.1" translation="0 0.38 0" rotation="0 0 0"/>
+				<Keyframe time="0.2" translation="0 0.76 0" rotation="0 0 0"/>
+				<Keyframe time="0.3" translation="0 1.14 0" rotation="0 0 0"/>
+				<Keyframe time="0.4" translation="0 1.52 0" rotation="0 0 0"/>
+				<Keyframe time="0.5" translation="0 1.9 0" rotation="0 0 0"/>
+				<Keyframe time="0.6" translation="0 2.28 0" rotation="0 0 0"/>
+				<Keyframe time="0.7" translation="0 2.66 0" rotation="0 0 0"/>
+				<Keyframe time="0.8" translation="0 3.04 0" rotation="0 0 0"/>
+				<Keyframe time="0.9" translation="0 3.42 0" rotation="0 0 0"/>
+				<Keyframe time="1" translation="0 3.8 0" rotation="0 0 0"/>
+			</part>
+            </animation>
+            <controls triggerNode="3|4|10" posAction="ACTIVATE_HANDTOOL" posText="action_openRolldoor" negText="action_closeRolldoor" />
+            <sounds>
+                <moving file="$data/sounds/tools/cotton_transporter/cotton_load_loop.ogg" loops="0" linkNode="3|4" volume="0.8" radius="25" innerRadius="3" fadeOut="0.25"/>
+                
+            </sounds>
+        </animatedObject>
+		<animatedObject saveId="tur1_TRIO" >
+            <animation duration="3">
+			<part node="3|5|0"> <!--index of tur 1-->
+				<Keyframe time="0" translation="0 0 0" rotation="0 0 0"/>
+				<Keyframe time="1" translation="0 0 0" rotation="0 -86.602 0"/>
+			</part>
+		    </animation>
+            <controls triggerNode="3|5|1" posAction="ACTIVATE_HANDTOOL" posText="action_opendoor" negText="action_closedoor" />
+            
+        </animatedObject>
+        <animatedObject saveId="tur2_TRIO" >
+            <animation duration="3">
+			<part node="3|6|0"> <!--index of tur 1-->
+				<Keyframe time="0" translation="0 0 0" rotation="0 0 0"/>
+				<Keyframe time="1" translation="0 0 0" rotation="0 86.602 0"/>
+			</part>
+		    </animation>
+            <controls triggerNode="3|6|1" posAction="ACTIVATE_HANDTOOL" posText="action_opendoor" negText="action_closedoor" />
+            
+        </animatedObject>		
+	</animatedObjects> 
+	
+	<dayNightObjects>
+
+        <dayNightObject node="3|7|0|0" intensityDay="0" intensityNight="1" />  
+		<dayNightObject node="3|7|0|0|0" intensityDay="0" intensityNight="1" />
+		<dayNightObject node="3|7|0|0|1" intensityDay="0" intensityNight="1" />
+		<dayNightObject node="3|7|0|0|2" intensityDay="0" intensityNight="1" />
+		<dayNightObject node="3|7|0|0|3" intensityDay="0" intensityNight="1" />
+        <dayNightObject node="3|7|0|1" visibleDay="false" visibleNight="true" />
+    </dayNightObjects>
+</placeable>

@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<placeable>
+    <storeData>
+        <name>Triolet Stall</name>
+        <image>store_triolietstall.png</image>
+        <price>300000</price>
+        <functions>
+            <function>$l10n_function_animalPenCow</function>
+        </functions>
+        <lifetime>1000</lifetime>
+        <dailyUpkeep>80</dailyUpkeep>
+		<rotation>0</rotation>
+        <brand>TRIO</brand>
+        <species>placeable</species>
+        <category>animalpens</category>
+    </storeData>
+
+    <placeableType>husbandry</placeableType>
+    <filename>triolietstall.i3d</filename>
+    <placement testSizeX="50" testSizeZ="50" sizeX="45" sizeZ="45" useRandomYRotation="false" useManualYRotation="true" placementRotationSnapAngle="90" placementPositionSnapSize="0.5" placementPositionSnapOffset="0.25" rideableDeliveryStartNode="0|6|0" rideableDeliveryWidthNode="0|6|0|0" rideableDeliveryHeightNode="0|6|0|0"/>
+
+    <clearAreas>
+        <clearArea startNode="0|10|0" widthNode="0|10|0|0" heightNode="0|10|0|1"/>
+    </clearAreas>
+
+    <leveling requireLeveling="true" maxSmoothDistance="10" maxSlope="75" maxEdgeAngle="30">
+        <levelAreas>
+            <levelArea startNode="0|11|0" widthNode="0|11|0|0" heightNode="0|11|0|1" groundType="grass"/>
+            <levelArea startNode="0|11|1" widthNode="0|11|1|0" heightNode="0|11|1|1" groundType="asphalt"/>
+            <levelArea startNode="0|11|2" widthNode="0|11|2|0" heightNode="0|11|2|1" groundType="dirt"/>
+            <levelArea startNode="0|11|3" widthNode="0|11|3|0" heightNode="0|11|3|1" groundType="dirt"/>
+            <levelArea startNode="0|11|4" widthNode="0|11|4|0" heightNode="0|11|4|1" groundType="dirt"/>
+            <levelArea startNode="0|11|5" widthNode="0|11|5|0" heightNode="0|11|5|1" groundType="dirt"/>
+			<!--<levelArea startNode="0|11|6" widthNode="0|11|6|0" heightNode="0|11|6|1" groundType="grass"/>-->
+        </levelAreas>
+    </leveling>
+
+    <foliageAreas>
+        <foliageArea fruitType="grass" rootNode="0|13|0" />
+    </foliageAreas>
+	
+	<seasons>
+        <maskAreas>
+            <maskArea startNode="10|1" widthNode="10|1|0" heightNode="10|1|1" />
+			<maskArea startNode="10|2" widthNode="10|2|0" heightNode="10|2|1" />
+        </maskAreas>
+    </seasons>
+
+    <triggerMarkers>
+        <triggerMarker node="0|14" />
+    </triggerMarkers>
+
+    <hotspots>
+        <hotspot name="Cow barn" fullName="$l10n_animals_cowPasture" imageName="COW_BARN" hidable="true" category="CATEGORY_TRIGGERS" />
+    </hotspots>
+
+
+    <husbandry saveId="Animals_COW" hasStatistics="false">
+        <modules>
+            <module name="animals">
+                <config type="COW" navmeshNode="0|8" animalLoadTriggerNode="0|0" maxNumAnimals="2000" husbandryFileName="$dataS/character/cowAnimalHusbandry.xml" placementRaycastDistance="2.0" carryingCapacity="50" rideableDeliveryStartNode="0|6|0" rideableDeliveryWidthNode="0|6|0|0" rideableDeliveryHeightNode="0|6|0|0" />
+            </module>
+            <module name="food">
+                <config node="0|1|0" exactFillRootNode="0" baleTriggerNode="3" animalPlacesNode="1" >
+                    <fillPlane node="0|1|1" minY="-0.586" maxY="0.06" colorChange="true" />
+                </config>
+            </module>
+            <module name="water">
+                <config node="0|2|0" exactFillRootNode="0" fillTypes="WATER" acceptedToolTypes="undefined trailer">
+                    <fillPlane node="0|2|1" minY="0.06" maxY="0.275" colorChange="true" />
+                </config>
+            </module>
+            <module name="liquidManure">
+                <config node="0|3|0" fillTypes="LIQUIDMANURE" triggerNode="0">
+                    <fillPlane node="0|3|0|1" minY="0.02" maxY="0.5" />
+                </config>
+            </module>
+            <module name="manure">
+                <config startNode="0|4|1|0" widthNode="0|4|1|0|0" heightNode="0|4|1|0|1" fillType="MANURE"/>
+            </module>
+            <module name="foodSpillage">
+                <config fillType="SILAGE">
+                    <area startNode="0|1|0|2|0" widthNode="0|1|0|2|0|0" heightNode="0|1|0|2|0|1" />
+                    <area startNode="0|1|0|2|1" widthNode="0|1|0|2|1|0" heightNode="0|1|0|2|1|1" />
+                    <area startNode="0|1|0|2|2" widthNode="0|1|0|2|2|0" heightNode="0|1|0|2|2|1" />
+                    <area startNode="0|1|0|2|3" widthNode="0|1|0|2|3|0" heightNode="0|1|0|2|3|1" />
+                </config>
+            </module>
+            <module name="milk">
+                <config node="0|7" fillTypes="MILK" triggerNode="0" />
+            </module>
+            <module name="straw">
+                <config node="0|5" exactFillRootNode="0" baleTriggerNode="2" fillTypes="STRAW">
+                    <fillPlane node="0|5|1" minY="-0.27" maxY="0" colorChange="false" />
+                </config>
+            </module>
+        </modules>
+        <placementRaycast distance="2" />
+    </husbandry>
+
+	<animatedObjects>
+        <animatedObject saveId="door_01" >
+            <animation duration="3">
+                <part node="0|9|3|1">
+                    <keyFrame time="0.0" translation="0 0 -0.022"/>
+                    <keyFrame time="1" translation="0 0 -3.464"/>
+                </part>
+                
+            </animation>
+            <controls triggerNode="0|15" posAction="ACTIVATE_HANDTOOL" posText="action_openGate" negText="action_closeGate" />
+            <sounds>
+                <moving file="$data/sounds/prefab/gate/gate_loop.wav" loops="0" linkNode="0|9|3|1" volume="0.8" radius="25" innerRadius="3" fadeOut="0.25"/>
+                <posEnd file="$data/sounds/prefab/gate/gate_opened.wav" linkNode="0|9|3|1" volume="0.8" radius="25" innerRadius="3" />
+                <negEnd file="$data/sounds/prefab/gate/gate_closed.wav" linkNode="0|9|3|1" volume="0.8" radius="25" innerRadius="3" />
+            </sounds>
+        </animatedObject>
+		<animatedObject saveId="door_02" >
+            <animation duration="3">
+                <part node="0|9|3|2">
+                    <keyFrame time="0.0" translation="0 0 -0.022"/>
+                    <keyFrame time="1" translation="0 0 3.76"/>
+                </part>
+                
+            </animation>
+            <controls triggerNode="0|16" posAction="ACTIVATE_HANDTOOL" posText="action_openGate" negText="action_closeGate" />
+            <sounds>
+                <moving file="$data/sounds/prefab/gate/gate_loop.wav" loops="0" linkNode="0|9|3|2" volume="0.8" radius="25" innerRadius="3" fadeOut="0.25"/>
+                <posEnd file="$data/sounds/prefab/gate/gate_opened.wav" linkNode="0|9|3|2" volume="0.8" radius="25" innerRadius="3" />
+                <negEnd file="$data/sounds/prefab/gate/gate_closed.wav" linkNode="0|9|3|2" volume="0.8" radius="25" innerRadius="3" />
+            </sounds>
+        </animatedObject>
+		<animatedObject saveId="door_03" >
+            <animation duration="3">
+                <part node="0|9|3|3">
+                    <keyFrame time="0.0" translation="0 0 -0.022"/>
+                    <keyFrame time="1" translation="0 0 -3.464"/>
+                </part>
+                
+            </animation>
+            <controls triggerNode="0|17" posAction="ACTIVATE_HANDTOOL" posText="action_openGate" negText="action_closeGate" />
+            <sounds>
+                <moving file="$data/sounds/prefab/gate/gate_loop.wav" loops="0" linkNode="0|9|3|3" volume="0.8" radius="25" innerRadius="3" fadeOut="0.25"/>
+                <posEnd file="$data/sounds/prefab/gate/gate_opened.wav" linkNode="0|9|3|3" volume="0.8" radius="25" innerRadius="3" />
+                <negEnd file="$data/sounds/prefab/gate/gate_closed.wav" linkNode="0|9|3|3" volume="0.8" radius="25" innerRadius="3" />
+            </sounds>
+        </animatedObject>
+		<animatedObject saveId="door_04" >
+            <animation duration="3">
+                <part node="0|9|3|4">
+                    <keyFrame time="0.0" translation="0 0 -0.022"/>
+                    <keyFrame time="1" translation="0 0 3.76"/>
+                </part>
+                
+            </animation>
+            <controls triggerNode="0|18" posAction="ACTIVATE_HANDTOOL" posText="action_openGate" negText="action_closeGate" />
+            <sounds>
+                <moving file="$data/sounds/prefab/gate/gate_loop.wav" loops="0" linkNode="0|9|3|4" volume="0.8" radius="25" innerRadius="3" fadeOut="0.25"/>
+                <posEnd file="$data/sounds/prefab/gate/gate_opened.wav" linkNode="0|9|3|4" volume="0.8" radius="25" innerRadius="3" />
+                <negEnd file="$data/sounds/prefab/gate/gate_closed.wav" linkNode="0|9|3|4" volume="0.8" radius="25" innerRadius="3" />
+            </sounds>
+        </animatedObject>
+    </animatedObjects>
+	
+	<dayNightObjects>
+
+        <dayNightObject node="0|9|5|0|0" intensityDay="0" intensityNight="1" />
+		<dayNightObject node="0|9|5|0|0|0" intensityDay="0" intensityNight="1" />
+		<dayNightObject node="0|9|5|0|0|1" intensityDay="0" intensityNight="1" />
+		<dayNightObject node="0|9|5|0|0|2" intensityDay="0" intensityNight="1" />
+		<dayNightObject node="0|9|5|0|0|3" intensityDay="0" intensityNight="1" />
+		<dayNightObject node="0|9|5|0|0|4" intensityDay="0" intensityNight="1" />
+		<dayNightObject node="0|9|5|0|0|5" intensityDay="0" intensityNight="1" />
+		<dayNightObject node="0|9|5|0|0|6" intensityDay="0" intensityNight="1" />
+		<dayNightObject node="0|9|5|0|0|7" intensityDay="0" intensityNight="1" />
+		<dayNightObject node="0|9|5|0|0|8" intensityDay="0" intensityNight="1" />
+		<dayNightObject node="0|9|5|0|0|9" intensityDay="0" intensityNight="1" />
+		<dayNightObject node="0|9|5|0|0|10" intensityDay="0" intensityNight="1" />
+		<dayNightObject node="0|9|5|0|0|11" intensityDay="0" intensityNight="1" />
+		<dayNightObject node="0|9|5|0|0|12" intensityDay="0" intensityNight="1" />
+		<dayNightObject node="0|9|5|0|0|13" intensityDay="0" intensityNight="1" />
+		<dayNightObject node="0|9|5|0|0|14" intensityDay="0" intensityNight="1" />
+        <dayNightObject node="0|9|5|0|1" visibleDay="false" visibleNight="true" />
+    </dayNightObjects>
+	
+    <tipOcclusionUpdateArea sizeX="125" sizeZ="105" />
+
+</placeable>

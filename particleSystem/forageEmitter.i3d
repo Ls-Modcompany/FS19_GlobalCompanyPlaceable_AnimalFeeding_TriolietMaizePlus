@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="iso-8859-1"?>
+<i3D name="getreidelagerVincent_prefinal" version="1.6" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://i3d.giants.ch/schema/i3d-1.6.xsd">
+    <Asset>
+        <Export program="GIANTS Editor 64bit" version="8.2.0"/>
+    </Asset>
+    <Files>
+        <File fileId="2" filename="$data/particleSystems/fx_chaff4x1_normal.dds"/>
+        <File fileId="1" filename="$data/particleSystems/fx_silage4x1_diffuse.dds"/>
+        <File fileId="3" filename="$data/shaders/psColorShader.xml"/>
+    </Files>
+    <Materials>
+        <Material name="fx_silage_mat" materialId="196" customShaderId="3">
+            <Texture fileId="1"/>
+            <Normalmap fileId="2"/>
+            <CustomParameter name="psColor" value="1 1 1 1"/>
+        </Material>
+        <Material name="lambert1" materialId="4" diffuseColor="0.494118 0.494118 0.494118 1"/>
+    </Materials>
+    <Shapes externalShapesFile="forageEmitter.i3d.shapes"/>
+    <Dynamics>
+        <ParticleSystem name="forageEmitter" dynamicId="1" type="sprite" rate="0.25" lifespan="400" maxCount="800" speed="0.002" speedRandom="0" tangentSpeed="0.01" normalSpeed="1" spriteScaleX="0.5" spriteScaleY="0.5" blendFactor="1" blendInFactor="0" blendOutFactor="1" randomInitRotation="true" deltaRotateMin="-0.0015708" deltaRotateMax="0.0015708" textureAtlasSizeX="4">
+            <Gravity force="0 -1 0"/>
+        </ParticleSystem>
+    </Dynamics>
+    <Scene>
+        <Dynamic dynamicId="1" emitterShapeNodeId="203" name="forageEmitter" clipDistance="100" nodeId="202" materialIds="196" distanceBlending="false">
+            <Shape shapeId="2" name="emitShape" nodeId="203" materialIds="4" nonRenderable="true"/>
+        </Dynamic>
+    </Scene>
+</i3D>

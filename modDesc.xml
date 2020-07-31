@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<modDesc descVersion="51">
+	<author>LS-Modcompany / D-S_Agrarservice - Kastor / kevink98</author>
+    <version>1.0.0.0</version>
+    
+	<title>
+        <en>Trioliet Animal Feeding Systems MaizePlusForage Edition</en>
+        <de>Trioliet Tierfütterungsanlagen MaizePlusForage Edition</de>
+    </title>
+    
+	<description>
+		<en><![CDATA[
+Triomatic T30 feed kitchen with storage bunkers for automatic feeding system and Triomatic HP 2 300 feeding robot on the monorail.
+In addition, a large cowshed where the feed kitchen and feeding robot can be grown. Attitude about feeding time and adjustment
+the mixing ratio. This unit is suitable for feeding with MaizePlusForage!
+
+Technical specifications:
+
+Triomatic T30 feed kitchen / Triomatic HP 2 300 feeding robot
+Cost: 185,000
+Capacity: 50000 L.
+Maintenance costs: 100 € / day
+Dimensions: ca15m x 15m
+Raw materials required: Maizesilage / Grasssilage / Wcs (fermented), Hay / Clover Hay / Alfalfa Hay, Cloversilage / Alfalfasilage
+Product: mixed ration
+
+Large cowshed
+Cost: 200,000 €
+Capacity: 2000 animals
+Maintenance costs: 80 € / day
+Dimensions: ca. 125m x 105m
+
+Information: Mod only playable in combination with GlobalCompany and MaizePlusForage!]]>
+		</en>
+		<de><![CDATA[Triomatic T30 Futterküche mit Vorratsbunkern für automatisches Fütterungssystem und Triomatic HP 2 300 Fütterungsroboter am Hängebahn.
+Dazu einen großen Kuhstall wo die Futterküche und Fütterungsroboter angebaut werden können. Einstellung über Fütterungs Zeit und Anpassung
+des Mischverhältnis. Diese Anlage ist für die Fütterung mit MaizePlusForage geeignet!
+
+Technische Daten:
+
+Triomatic T30 Futterküche / Triomatic HP 2 300 Fütterungsroboter
+Kosten: 185000
+Kapazität: 50000 L
+Unterhaltskosten: 100 € / Tag
+Abmessungen: ca15m x 15m
+Benötigte Rohstoffe: Maissilage / Grassilage / GPS (siliert), Heu / Klee Heu / Luzerne Heu , Kleesilage / Luzernesilage
+
+Produkt: Mischration
+
+Großer Kuhstall
+Kosten: 200000 €
+Kapazität: 2000 Tiere
+Unterhaltskosten: 80 € / Tag
+Abmessungen: ca. 125m x 105m
+
+Information: Mod nur in Verbindung mit GlobalCompany spielbar und MaizePlusForage!]]></de>
+	</description>
+    
+	<iconFilename>Trioliet_icon.dds</iconFilename>
+    <multiplayer supported="true"/>  
+		
+	<extraSourceFiles>
+		<sourceFile filename="GC_Checker.lua" />
+		<sourceFile filename="ChangeMaxAnimals.lua" />
+    </extraSourceFiles>
+	
+	<globalCompany minimumVersion="1.7.0.0" />
+  	
+	<storeItems>
+        <storeItem rootNode="placeable" xmlFilename="husbandryCowTrioliet.xml"/>
+        <storeItem xmlFilename="trioliet.xml"/>
+    </storeItems>
+	
+	<brands>
+        <brand name="TRIO" title="Trioliet" image="Brand_Trioliet.dds"/>
+    </brands>
+	<l10n>
+	    <text name="action_openRolldoor">
+            <en>Open rolling gate</en>
+			<de>Rolltor öffnen</de>
+		</text>
+		<text name="action_closeRolldoor">
+			<en>Close rolling gate</en>
+			<de>Rolltor schließen</de>
+	    </text>
+		<text name="action_opendoor">
+            <en>Open gate</en>
+			<de>Tür öffnen</de>
+		</text>
+		<text name="action_closedoor">
+			<en>Close gate</en>
+			<de>Tür schließen</de>
+	    </text>
+		<text name="action_openGate">
+            <en>Open Sliding gate</en>
+			<de>Schiebetor öffnen</de>
+		</text>
+		<text name="action_closeGate">
+			<en>Close Sliding gate</en>
+			<de>Schiebetor schließen</de>
+	    </text>
+	</l10n>
+</modDesc>

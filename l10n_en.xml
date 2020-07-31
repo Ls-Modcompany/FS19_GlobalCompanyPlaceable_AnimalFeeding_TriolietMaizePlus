@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<l10n>
+	<elements>
+		<e k="GlobalCompanyPlaceable_AnimalFeeding_TriolietMaizePlus_title" v="Triomatic T30"/>
+		<e k="GlobalCompanyPlaceable_AnimalFeeding_TriolietMaizePlus_function" v="The Triomatic T30 is a feed kitchen with storage bunkers. The feeding robot calls up the feed per bunker. The robot is suitable for MaizePlusForage."/>
+		
+		<e k="GlobalCompanyPlaceable_AnimalFeeding_TriolietMaizePlus_bunker1_title" v="Bunker 1"/>
+		<e k="GlobalCompanyPlaceable_AnimalFeeding_TriolietMaizePlus_bunker2_title" v="Bunker 2"/>
+		<e k="GlobalCompanyPlaceable_AnimalFeeding_TriolietMaizePlus_bunker3_title" v="Bunker 3"/>
+		<e k="GlobalCompanyPlaceable_AnimalFeeding_TriolietMaizePlus_bunker1_fillTypeTitle" v="Maizesil. / Grasssil. / Wcs (ferm.)"/>
+		<e k="GlobalCompanyPlaceable_AnimalFeeding_TriolietMaizePlus_bunker2_fillTypeTitle" v="Cloversilage / Alfalfasilage"/>
+		<e k="GlobalCompanyPlaceable_AnimalFeeding_TriolietMaizePlus_bunker3_fillTypeTitle" v="Grass, Clover, Choppedmaize"/>
+		
+	</elements>
+</l10n>

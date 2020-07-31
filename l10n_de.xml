@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<l10n>
+	<elements>
+		<e k="GlobalCompanyPlaceable_AnimalFeeding_TriolietMaizePlus_title" v="Triomatic T30"/>
+		<e k="GlobalCompanyPlaceable_AnimalFeeding_TriolietMaizePlus_function" v="Der Triomatic T30 ist eine Fütterküche mit Vorratsbunkern. Der Fütterungsroboter ruft das Futter pro Bunker ab. Der Roboter ist für MaizePlusForage geeignet."/>
+		
+		<e k="GlobalCompanyPlaceable_AnimalFeeding_TriolietMaizePlus_bunker1_title" v="Bunker 1"/>
+		<e k="GlobalCompanyPlaceable_AnimalFeeding_TriolietMaizePlus_bunker2_title" v="Bunker 2"/>
+		<e k="GlobalCompanyPlaceable_AnimalFeeding_TriolietMaizePlus_bunker3_title" v="Bunker 3"/>
+		<e k="GlobalCompanyPlaceable_AnimalFeeding_TriolietMaizePlus_bunker1_fillTypeTitle" v="Maissil. / Grassil. / GPS (sil.)"/>
+		<e k="GlobalCompanyPlaceable_AnimalFeeding_TriolietMaizePlus_bunker2_fillTypeTitle" v="Kleesilage / Luzernesilage"/>
+		<e k="GlobalCompanyPlaceable_AnimalFeeding_TriolietMaizePlus_bunker3_fillTypeTitle" v="Gras, Klee, Frischmais"/>
+		
+	</elements>
+</l10n>
