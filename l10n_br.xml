@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<l10n>
+	<elements>
+		<e k="GlobalCompanyPlaceable_AnimalFeeding_TriolietMaizePlus_title" v="Triomatic T30"/>
+		<e k="GlobalCompanyPlaceable_AnimalFeeding_TriolietMaizePlus_function" v="O Triomatic T30 é uma cozinha de alimentação com bunkers de armazenamento. O robô de alimentação chama a alimentação por bunker."/>
+		
+		<e k="GlobalCompanyPlaceable_AnimalFeeding_TriolietMaizePlus_bunker1_title" v="Bunker 1"/>
+		<e k="GlobalCompanyPlaceable_AnimalFeeding_TriolietMaizePlus_bunker2_title" v="Bunker 2"/>
+		<e k="GlobalCompanyPlaceable_AnimalFeeding_TriolietMaizePlus_bunker3_title" v="Bunker 3"/>
+		<e k="GlobalCompanyPlaceable_AnimalFeeding_TriolietMaizePlus_bunker1_fillTypeTitle" v="Maizesil. / Grasssil. / Wcs (ferm.)"/>
+		<e k="GlobalCompanyPlaceable_AnimalFeeding_TriolietMaizePlus_bunker2_fillTypeTitle" v="Cloversilage / Alfalfasilage"/>
+		<e k="GlobalCompanyPlaceable_AnimalFeeding_TriolietMaizePlus_bunker3_fillTypeTitle" v="Grama, Clover, Choppedmaize"/>
+		
+	</elements>
+</l10n>
