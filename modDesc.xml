@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" standalone="no" ?>
 <modDesc descVersion="51">
 	<author>LS-Modcompany / D-S_Agrarservice - Kastor / kevink98</author>
-    <version>1.0.0.0</version>
+    <version>1.0.0.1</version>
     
 	<title>
         <en>Trioliet Animal Feeding Systems MaizePlusForage Edition</en>
@@ -32,6 +32,29 @@ Dimensions: ca. 125m x 105m
 
 Information: Mod only playable in combination with GlobalCompany and MaizePlusForage!]]>
 		</en>
+		<br><![CDATA[
+Cozinha de alimentação Triomatic T30 com bunkers de armazenamento para sistema de alimentação automática e robô de alimentação Triomatic HP 2 300 no monotrilho.
+Além disso, um grande estábulo onde a cozinha e o robô de alimentação podem ser cultivados. Atitude sobre o tempo de alimentação e ajuste
+a proporção de mistura. Esta unidade é adequada para alimentação com MaizePlusForage!
+
+Informações Técnicas:
+
+Triomatic T30 feed kitchen / Triomatic HP 2 300 feeding robot
+Valor: 185,000
+Capacidade: 50000 L.
+Custos de manutenção: 100 $ / day
+Dimensão: ca15m x 15m
+Matérias-primas necessárias: Maizesilage / Grasssilage / Wcs (fermented), Hay / Clover Hay / Alfalfa Hay, Cloversilage / Alfalfasilage
+Produto: Ração Mista
+
+Estábulo grande
+Valor: 200,000 €
+Capacidade: 2000 animais
+Custos de manutenção: 80 $ / day
+Dimensão: ca. 125m x 105m
+
+Informações: Mod só funcionará com GlobalCompany e MaizePlusForage!]]>
+		</br>
 		<de><![CDATA[Triomatic T30 Futterküche mit Vorratsbunkern für automatisches Fütterungssystem und Triomatic HP 2 300 Fütterungsroboter am Hängebahn.
 Dazu einen großen Kuhstall wo die Futterküche und Fütterungsroboter angebaut werden können. Einstellung über Fütterungs Zeit und Anpassung
 des Mischverhältnis. Diese Anlage ist für die Fütterung mit MaizePlusForage geeignet!
@@ -77,26 +100,32 @@ Information: Mod nur in Verbindung mit GlobalCompany spielbar und MaizePlusForag
 	<l10n>
 	    <text name="action_openRolldoor">
             <en>Open rolling gate</en>
+            <br>Abrir Portão Rolante</br>
 			<de>Rolltor öffnen</de>
 		</text>
 		<text name="action_closeRolldoor">
 			<en>Close rolling gate</en>
+			<br>Fechar Portão Rolante</br>
 			<de>Rolltor schließen</de>
 	    </text>
 		<text name="action_opendoor">
             <en>Open gate</en>
+            <br>Abrir Portão</br>
 			<de>Tür öffnen</de>
 		</text>
 		<text name="action_closedoor">
 			<en>Close gate</en>
+			<br>Fechar Portão</br>
 			<de>Tür schließen</de>
 	    </text>
 		<text name="action_openGate">
             <en>Open Sliding gate</en>
+            <br>Abrir Portão Deslizante</br>
 			<de>Schiebetor öffnen</de>
 		</text>
 		<text name="action_closeGate">
 			<en>Close Sliding gate</en>
+			<br>Portão Deslizante Fechado</br>
 			<de>Schiebetor schließen</de>
 	    </text>
 	</l10n>

@@ -10,6 +10,8 @@
 --
 -- Changelog:
 --
+-- 
+--
 -- 	v1.1.0.0 (24.04.2019):
 -- 		- remove 'modEventListener' as in FS19 this is now a problem if more than one script in a mod is using it.
 --		- This is done to support 'addonScripts' if needed.
@@ -160,6 +162,7 @@ end
 function GC_Checker.getWarningText(language)
 	local warnings = {
 		["en"] = "Global Company Version %s or greater is required for this mod / map to operate. Please visit modHub download link for the latest official version or visit '%s' for Global Company support.",
+		["br"] = "A versão da empresa global %s ou superior é necessária para este mod / mapa operar. Visite o link de download do modHub para obter a versão oficial mais recente ou visite '%s' para obter suporte para empresas globais.",
 		["de"] = "Für die Verwendung dieses Mods / dieser Map ist Global Company Version %s oder höher erforderlich. Bitte im ModHub die aktuelle offizielle Version downloaden, oder besuche '%s' für den Global Company Support."
 	}
 
